@@ -19,14 +19,14 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-slate-800">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200 shadow-sm">
+      <header className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-md z-50 border-b border-slate-700 shadow-lg">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Logo />
           <Button 
             onClick={scrollToCTA}
-            className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 hover:scale-105 shadow-md"
+            className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 hover:scale-105 shadow-md text-base px-6 py-3"
           >
             Quero Começar Agora
           </Button>
@@ -34,19 +34,19 @@ const Home = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-8">
-            <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-100 px-4 py-2 text-sm font-medium">
+            <Badge className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 text-sm font-medium">
               Método Validado por +10.000 Alunos
             </Badge>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Transforme Sua Vida com um
-              <span className="block text-blue-600 mt-2">Negócio Online Lucrativo</span>
+              <span className="block text-blue-400 mt-2">Negócio Online Lucrativo</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
               Aprenda o sistema completo para criar, lançar e escalar seu negócio digital do zero, 
               mesmo sem experiência ou grandes investimentos.
             </p>
@@ -59,9 +59,9 @@ const Home = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
               {stats.map((stat) => (
-                <div key={stat.id} className="text-center p-6 bg-white rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-300">
-                  <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">{stat.value}</div>
-                  <div className="text-sm text-slate-600">{stat.label}</div>
+                <div key={stat.id} className="text-center p-6 bg-slate-700/50 rounded-xl shadow-lg border border-slate-600 hover:bg-slate-700 hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{stat.value}</div>
+                  <div className="text-sm text-slate-300">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -77,8 +77,8 @@ const Home = () => {
                 Começar Minha Transformação
                 <ArrowRight className={`ml-2 h-5 w-5 transition-transform duration-300 ${isHovering ? 'translate-x-1' : ''}`} />
               </Button>
-              <div className="flex items-center gap-2 text-slate-600">
-                <Shield className="h-5 w-5 text-green-600" />
+              <div className="flex items-center gap-2 text-slate-300">
+                <Shield className="h-5 w-5 text-green-400" />
                 <span className="text-sm font-medium">Garantia de 7 dias</span>
               </div>
             </div>
@@ -87,13 +87,13 @@ const Home = () => {
       </section>
 
       {/* How It Works Section with Video */}
-      <section className="py-20 px-4 bg-gradient-to-br from-slate-100 to-slate-50">
+      <section className="py-20 px-4 bg-slate-900">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Como Funciona a Fórmula?
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
               Veja em detalhes o passo a passo do método que já transformou milhares de vidas
             </p>
           </div>
@@ -107,42 +107,42 @@ const Home = () => {
             {/* Steps */}
             <div className="space-y-6">
               <div className="flex gap-4 items-start group">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-300 shadow-lg">
                   1
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Fundamentos</h3>
-                  <p className="text-slate-600">Aprenda os pilares essenciais do marketing digital e negócios online do zero.</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Fundamentos</h3>
+                  <p className="text-slate-300">Aprenda os pilares essenciais do marketing digital e negócios online do zero.</p>
                 </div>
               </div>
 
               <div className="flex gap-4 items-start group">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-300 shadow-lg">
                   2
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Implementação</h3>
-                  <p className="text-slate-600">Coloque em prática estratégias validadas e crie seu primeiro produto digital.</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Implementação</h3>
+                  <p className="text-slate-300">Coloque em prática estratégias validadas e crie seu primeiro produto digital.</p>
                 </div>
               </div>
 
               <div className="flex gap-4 items-start group">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-300 shadow-lg">
                   3
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Tráfego e Vendas</h3>
-                  <p className="text-slate-600">Domine técnicas de captação de clientes e conversão para gerar suas primeiras vendas.</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Tráfego e Vendas</h3>
+                  <p className="text-slate-300">Domine técnicas de captação de clientes e conversão para gerar suas primeiras vendas.</p>
                 </div>
               </div>
 
               <div className="flex gap-4 items-start group">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-300 shadow-lg">
                   4
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Escala e Automação</h3>
-                  <p className="text-slate-600">Automatize processos e multiplique seus resultados de forma escalável.</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Escala e Automação</h3>
+                  <p className="text-slate-300">Automatize processos e multiplique seus resultados de forma escalável.</p>
                 </div>
               </div>
             </div>
@@ -151,13 +151,13 @@ const Home = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-slate-800">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Por Que Escolher a Fórmula Negócio Online?
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
               Um sistema completo e validado para você alcançar a liberdade financeira
             </p>
           </div>
@@ -170,16 +170,16 @@ const Home = () => {
               return (
                 <Card 
                   key={benefit.id} 
-                  className="border-2 border-slate-200 hover:border-blue-400 transition-all duration-300 hover:shadow-lg group"
+                  className="bg-slate-700/50 border-2 border-slate-600 hover:border-blue-500 transition-all duration-300 hover:shadow-xl hover:bg-slate-700 group"
                 >
                   <CardHeader>
-                    <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors duration-300">
-                      <Icon className="h-7 w-7 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                    <div className="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500 transition-colors duration-300 shadow-lg">
+                      <Icon className="h-7 w-7 text-white transition-colors duration-300" />
                     </div>
-                    <CardTitle className="text-xl font-bold text-slate-900">{benefit.title}</CardTitle>
+                    <CardTitle className="text-xl font-bold text-white">{benefit.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
+                    <p className="text-slate-300 leading-relaxed">{benefit.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -189,17 +189,17 @@ const Home = () => {
       </section>
 
       {/* Guarantee Section */}
-      <section className="py-20 px-4 bg-slate-50">
+      <section className="py-20 px-4 bg-slate-900">
         <div className="container mx-auto max-w-4xl">
-          <Card className="border-2 border-green-500 shadow-xl bg-gradient-to-br from-green-50 to-white">
+          <Card className="bg-gradient-to-br from-green-900/40 to-green-800/30 border-2 border-green-500 shadow-2xl">
             <CardContent className="p-12 text-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="h-10 w-10 text-green-600" />
+              <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Shield className="h-10 w-10 text-white" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 {guaranteeInfo.title}
               </h2>
-              <p className="text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg text-slate-200 leading-relaxed max-w-2xl mx-auto">
                 {guaranteeInfo.description}
               </p>
             </CardContent>
@@ -208,32 +208,32 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-slate-800">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Histórias de Sucesso Reais
             </h2>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-slate-300">
               Veja como alunos estão transformando suas vidas
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="border-2 border-slate-200 hover:shadow-lg transition-shadow duration-300">
+              <Card key={testimonial.id} className="bg-slate-700/50 border-2 border-slate-600 hover:shadow-xl hover:bg-slate-700 transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-slate-700 mb-6 leading-relaxed italic">
+                  <p className="text-slate-200 mb-6 leading-relaxed italic">
                     "{testimonial.content}"
                   </p>
-                  <div className="border-t border-slate-200 pt-4">
-                    <p className="font-bold text-slate-900">{testimonial.name}</p>
-                    <p className="text-sm text-slate-600">{testimonial.role}</p>
+                  <div className="border-t border-slate-600 pt-4">
+                    <p className="font-bold text-white">{testimonial.name}</p>
+                    <p className="text-sm text-slate-400">{testimonial.role}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -243,13 +243,13 @@ const Home = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 bg-slate-50">
+      <section className="py-20 px-4 bg-slate-900">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Perguntas Frequentes
             </h2>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-slate-300">
               Tire suas dúvidas antes de começar
             </p>
           </div>
@@ -259,12 +259,12 @@ const Home = () => {
               <AccordionItem 
                 key={item.id} 
                 value={`item-${item.id}`}
-                className="bg-white border-2 border-slate-200 rounded-lg px-6 hover:border-blue-400 transition-colors duration-300"
+                className="bg-slate-700/50 border-2 border-slate-600 rounded-lg px-6 hover:border-blue-500 hover:bg-slate-700 transition-all duration-300"
               >
-                <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-blue-600 py-6">
+                <AccordionTrigger className="text-left font-semibold text-white hover:text-blue-400 py-6">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-700 pb-6 leading-relaxed">
+                <AccordionContent className="text-slate-300 pb-6 leading-relaxed">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -274,7 +274,7 @@ const Home = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section id="cta-section" className="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-800">
+      <section id="cta-section" className="py-20 px-4 bg-gradient-to-br from-blue-700 to-blue-900">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Pronto Para Mudar Sua Vida?
@@ -310,19 +310,19 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12 px-4">
+      <footer className="bg-slate-950 text-white py-12 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="mb-4">
-                <Logo className="h-8 w-8" textClassName="text-xl" />
+                <Logo className="h-12 w-12" textClassName="text-2xl" />
               </div>
               <p className="text-slate-400">
                 O sistema completo para criar e escalar seu negócio digital.
               </p>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Links Importantes</h3>
+              <h3 className="font-bold mb-4 text-white">Links Importantes</h3>
               <ul className="space-y-2 text-slate-400">
                 <li><a href="#" className="hover:text-white transition-colors duration-300">Termos de Uso</a></li>
                 <li><a href="#" className="hover:text-white transition-colors duration-300">Política de Privacidade</a></li>
@@ -330,13 +330,13 @@ const Home = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Suporte</h3>
+              <h3 className="font-bold mb-4 text-white">Suporte</h3>
               <p className="text-slate-400">
                 Dúvidas? Entre em contato conosco através da plataforma Hotmart.
               </p>
             </div>
           </div>
-          <div className="border-t border-slate-800 pt-8 text-center text-slate-400">
+          <div className="border-t border-slate-800 pt-8 text-center text-slate-500">
             <p>© 2025 Fórmula Negócio Online. Todos os direitos reservados.</p>
             <p className="mt-2 text-sm">Este produto é comercializado com apoio da Hotmart. A plataforma não faz controle editorial prévio dos produtos, nem avalia a tecnicidade e experiência daqueles que os produzem.</p>
           </div>

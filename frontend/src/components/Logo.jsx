@@ -1,69 +1,84 @@
 import React from 'react';
 
-const Logo = ({ className = "h-10 w-10", textClassName = "text-2xl" }) => {
+const Logo = ({ className = "h-16 w-16", textClassName = "text-3xl" }) => {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-4">
       <svg
         className={className}
-        viewBox="0 0 100 100"
+        viewBox="0 0 120 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Escudo exterior */}
-        <path
-          d="M50 5 L85 20 L85 50 Q85 75 50 95 Q15 75 15 50 L15 20 Z"
+        {/* Círculo externo com borda */}
+        <circle
+          cx="60"
+          cy="60"
+          r="56"
           fill="#1e40af"
-          stroke="#1e3a8a"
-          strokeWidth="2"
+          stroke="#3b82f6"
+          strokeWidth="3"
         />
         
-        {/* Escudo interno com gradiente */}
+        {/* Gradiente de fundo */}
         <defs>
-          <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#3b82f6', stopOpacity: 1 }} />
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#2563eb', stopOpacity: 1 }} />
             <stop offset="100%" style={{ stopColor: '#1e40af', stopOpacity: 1 }} />
+          </linearGradient>
+          <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#fbbf24', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#f59e0b', stopOpacity: 1 }} />
           </linearGradient>
         </defs>
         
-        <path
-          d="M50 12 L78 24 L78 50 Q78 70 50 87 Q22 70 22 50 L22 24 Z"
-          fill="url(#shieldGradient)"
+        <circle
+          cx="60"
+          cy="60"
+          r="50"
+          fill="url(#logoGradient)"
         />
         
-        {/* Símbolo de crescimento - seta ascendente estilizada */}
+        {/* Letra F estilizada */}
         <path
-          d="M50 35 L50 65 M50 35 L38 47 M50 35 L62 47"
+          d="M 40 35 L 75 35 L 75 42 L 48 42 L 48 53 L 70 53 L 70 60 L 48 60 L 48 85"
           stroke="#ffffff"
-          strokeWidth="6"
+          strokeWidth="7"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        
+        {/* Seta de crescimento integrada */}
+        <path
+          d="M 68 70 L 68 85 M 68 70 L 62 76 M 68 70 L 74 76"
+          stroke="url(#arrowGradient)"
+          strokeWidth="5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         
-        {/* Linha de base representando fundação */}
-        <line
-          x1="35"
-          y1="70"
-          x2="65"
-          y2="70"
-          stroke="#ffffff"
-          strokeWidth="5"
-          strokeLinecap="round"
-        />
-        
-        {/* Estrela de excelência */}
-        <path
-          d="M50 22 L52 28 L58 28 L53 32 L55 38 L50 34 L45 38 L47 32 L42 28 L48 28 Z"
+        {/* Círculo de destaque */}
+        <circle
+          cx="80"
+          cy="35"
+          r="8"
           fill="#fbbf24"
           stroke="#f59e0b"
-          strokeWidth="0.5"
+          strokeWidth="2"
+        />
+        
+        {/* Mini estrela no círculo */}
+        <path
+          d="M 80 32 L 81 34 L 83 34 L 81.5 35.5 L 82 37.5 L 80 36 L 78 37.5 L 78.5 35.5 L 77 34 L 79 34 Z"
+          fill="#ffffff"
         />
       </svg>
       
       <div className="flex flex-col leading-tight">
-        <span className={`${textClassName} font-bold text-slate-800`}>
+        <span className={`${textClassName} font-bold text-white`}>
           Fórmula Negócio
         </span>
-        <span className="text-sm font-semibold text-blue-600 tracking-wide">
+        <span className="text-base font-semibold text-blue-400 tracking-wider">
           ONLINE
         </span>
       </div>
