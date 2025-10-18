@@ -3,8 +3,10 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 import { Badge } from './ui/badge';
-import { CheckCircle2, Shield, TrendingUp, Users, Clock, Zap, Star, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Shield, TrendingUp, Users, Clock, Zap, Star, ArrowRight, PlayCircle, Target, Rocket, Award } from 'lucide-react';
 import { benefits, testimonials, faqItems, guaranteeInfo, stats } from '../mock';
+import Logo from './Logo';
+import VideoPlayer from './VideoPlayer';
 
 const Home = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -19,15 +21,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+      <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <TrendingUp className="h-8 w-8 text-blue-600" />
-            <span className="text-2xl font-bold text-slate-800">Fórmula Negócio Online</span>
-          </div>
+          <Logo />
           <Button 
             onClick={scrollToCTA}
-            className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 hover:scale-105"
+            className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-300 hover:scale-105 shadow-md"
           >
             Quero Começar Agora
           </Button>
@@ -51,6 +50,11 @@ const Home = () => {
               Aprenda o sistema completo para criar, lançar e escalar seu negócio digital do zero, 
               mesmo sem experiência ou grandes investimentos.
             </p>
+
+            {/* Video Hero */}
+            <div className="max-w-4xl mx-auto mt-12">
+              <VideoPlayer placeholder={true} />
+            </div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
@@ -76,6 +80,70 @@ const Home = () => {
               <div className="flex items-center gap-2 text-slate-600">
                 <Shield className="h-5 w-5 text-green-600" />
                 <span className="text-sm font-medium">Garantia de 7 dias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section with Video */}
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-100 to-slate-50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              Como Funciona a Fórmula?
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Veja em detalhes o passo a passo do método que já transformou milhares de vidas
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Video */}
+            <div>
+              <VideoPlayer placeholder={true} />
+            </div>
+
+            {/* Steps */}
+            <div className="space-y-6">
+              <div className="flex gap-4 items-start group">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                  1
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Fundamentos</h3>
+                  <p className="text-slate-600">Aprenda os pilares essenciais do marketing digital e negócios online do zero.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start group">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                  2
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Implementação</h3>
+                  <p className="text-slate-600">Coloque em prática estratégias validadas e crie seu primeiro produto digital.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start group">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                  3
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Tráfego e Vendas</h3>
+                  <p className="text-slate-600">Domine técnicas de captação de clientes e conversão para gerar suas primeiras vendas.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start group">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                  4
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Escala e Automação</h3>
+                  <p className="text-slate-600">Automatize processos e multiplique seus resultados de forma escalável.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -246,9 +314,8 @@ const Home = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <TrendingUp className="h-6 w-6 text-blue-400" />
-                <span className="text-xl font-bold">Fórmula Negócio Online</span>
+              <div className="mb-4">
+                <Logo className="h-8 w-8" textClassName="text-xl" />
               </div>
               <p className="text-slate-400">
                 O sistema completo para criar e escalar seu negócio digital.
